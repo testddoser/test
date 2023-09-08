@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 80%;
+      height: 80vh; /* Занимает 80% высоты экрана */
+      margin: 0 auto;
+      background-color: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 90%;
+        height: 70vh; /* Занимает 70% высоты экрана */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1>Адаптивный сайт</h1>
+      <p>Добро пожаловать на наш сайт! Он будет отображаться корректно на различных устройствах.</p>
+      <p>Некоторый дополнительный контент.</p>
+    </div>
+  </div>
+</body>
+</html>
