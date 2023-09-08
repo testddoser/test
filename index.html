@@ -1,79 +1,45 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
-  <div class="col-4">
+<a href="" class="sliding-button">Button</a>
 
-    <style>
-      form{
-  display: block;
-  width: 100%;
+<style>
+  body {
+  background: #1D1B26;
 }
-
-button{
+.sliding-button {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
   position: relative;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    margin-top: -12px;
-    width: 24px;
-    height: 24px;
-    border: 2px solid;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.5s;
-    animation: 0.8s linear infinite rotate;
-  }
-  &.sending{
-    pointer-events: none;
-    cursor: not-allowed;
-    
-    &:before {
-      transition-delay: 0.5s;
-      transition-duration: 1s;
-      opacity: 1;
-    }
-  }
+  padding: 15px 30px;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  border-image-slice: 1;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: .8s cubic-bezier(.165, .84, .44, 1);
 }
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.sliding-button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  transition: .8s cubic-bezier(.165, .84, .44, 1);
 }
-    </style>
-
-    <script>
-      $('form').on('submit',function(e){
-  e.preventDefault();
-  var but = $(this).find('[type="submit"]').toggleClass('sending').blur();
-  
-  setTimeout(function(){
-     but.removeClass('sending').blur();
-  },4500);
-  
-})
-    </script>
-    
-    <form>
-      <button type="submit"  class="btn btn-warning btn-lg btn-block">Click Me</button>
-    </form>
-    
-    <form class="mt-4">
-      <button type="submit"  class="btn btn-outline-primary btn-lg btn-block">Click Me</button>
-    </form>
-    
-    
-      </div>
-
-  
-</div>
-</div>
+.sliding-button:hover {
+  background: rgba(255, 255, 255, 0);
+}
+.sliding-button:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+</style>
