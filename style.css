@@ -1,5 +1,6 @@
   body {
   background: #1D1B26;
+  font-family: Arial, sans-serif;
 }
 .sliding-button {
   text-decoration: none;
@@ -37,13 +38,22 @@
   top: auto;
   height: 100%;
 }
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
+    .container {
+      width: 80%;
+      height: 80vh; /* Занимает 80% высоты экрана */
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-@media screen and (min-width: 768px) {
-  .container {
-    width: 80%;
-  }
-}
+    h1 {
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 90%;
+        height: 70vh; /* Занимает 70% высоты экрана */
+      }
+    }
